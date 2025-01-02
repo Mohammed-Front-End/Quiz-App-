@@ -18,54 +18,51 @@ let userAnswers = [];
 function getQuestions() {
   let myRequest = new XMLHttpRequest();
   myRequest.onreadystatechange = function () {
-    if(this.readyState === 4 && this.status ===200){
-        questionsObject = JSON.parse(this.responseText);
+    if (this.readyState === 4 && this.status === 200) {
+      questionsObject = JSON.parse(this.responseText);
       let questionsCount = questionsObject.questions.length;
 
-      // Create Bullets + Set Questions  Count
+      // إنشاء النقاط وإعداد الأسئلة
       CreateBullets(questionsCount);
-      
-      // Add questions Data
       addQuestionData(questionsObject.questions[currentIndex], questionsCount);
-      // console.log(questionsObject.questions[currentIndex], questionsCount);
-      
-      // Start Count Down
-      countDown(25,questionsCount);
 
-      // Click on Submit 
+      // بدء العد التنازلي بناءً على مستوى الصعوبة
+      let initialDuration = getDurationForDifficulty(
+        questionsObject.questions[currentIndex].difficulty
+      );
+      countDown(initialDuration, questionsCount);
+
+      // عند النقر على زر الإرسال
       submitButton.onclick = function () {
-        // Get Right Answer
         let theRightAnswer = questionsObject.questions[currentIndex].answer;
-        // console.log(theRightAnswer);
-
-        // increase index 
         currentIndex++;
+        checkAnswer(theRightAnswer, questionsCount);
 
-        // check the answer
-        checkAnswer(theRightAnswer,questionsCount);
+        quizArea.innerHTML = "";
+        answersArea.innerHTML = "";
 
-        // Empty Previous Questions
-        quizArea.innerHTML = '';
-        answersArea.innerHTML = '';
+        if (currentIndex < questionsCount) {
+          addQuestionData(
+            questionsObject.questions[currentIndex],
+            questionsCount
+          );
+          handelBullets();
+          clearInterval(countDownIntervral);
 
-        // Add questions Data
-        addQuestionData(questionsObject.questions[currentIndex], questionsCount);
-        
-        //Hendle Bullets Classes
-        handelBullets();
+          // بدء العد التنازلي للسؤال التالي بناءً على مستوى الصعوبة
+          let nextDuration = getDurationForDifficulty(
+            questionsObject.questions[currentIndex].difficulty
+          );
+          countDown(nextDuration, questionsCount);
+        }
 
-        clearInterval(countDownIntervral);
-        // Start Count Down
-        countDown(40,questionsCount);
-
-        // Show Results
         showResults(questionsCount);
-      }
-    };;
+      };
+    }
   };
-  myRequest.open('GET','questions.JSON',true);
+  myRequest.open("GET", "questions.JSON", true);
   myRequest.send();
-};
+}
 getQuestions() ;
 
 function CreateBullets (num){
@@ -220,21 +217,35 @@ function showResults(count) {
 
 
 
-function countDown(duration, count){
-  if (currentIndex < count){
-    let mainuts,seconds;
-    countDownIntervral =setInterval(function() {
-      mainuts = parseInt(duration / 60 );
-      seconds = parseInt(duration % 60 );
+function countDown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds;
+    countDownIntervral = setInterval(function () {
+      minutes = parseInt(duration / 60);
+      seconds = parseInt(duration % 60);
 
-      mainuts = mainuts  < 10 ? `0${mainuts}` : mainuts;
-      seconds = seconds  < 10 ? `0${seconds}` : seconds;
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      seconds = seconds < 10 ? `0${seconds}` : seconds;
 
-      countDownElement.innerHTML = `${mainuts}:${seconds}`;
-      if(--duration < 0){
+      countDownElement.innerHTML = `${minutes}:${seconds}`;
+      if (--duration < 0) {
         clearInterval(countDownIntervral);
         submitButton.click();
       }
     }, 1000);
+  }
+}
+
+// تحديد الوقت حسب مستوى الصعوبة
+function getDurationForDifficulty(difficulty) {
+  switch (difficulty) {
+    case "easy":
+      return 30; // 30 ثانية للمستوى السهل
+    case "medium":
+      return 60; // 60 ثانية للمستوى المتوسط
+    case "hard":
+      return 90; // 90 ثانية للمستوى الصعب
+    default:
+      return 30; // الافتراضي 30 ثانية
   }
 }
