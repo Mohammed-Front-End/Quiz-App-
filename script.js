@@ -245,6 +245,8 @@ function getDurationForDifficulty(difficulty) {
       return 60; // 60 ثانية للمستوى المتوسط
     case "hard":
       return 90; // 90 ثانية للمستوى الصعب
+    case "Very Difficult":
+      return 120; // 120  ثانية للمستوى الصعب جد
     default:
       return 30; // الافتراضي 30 ثانية
   }
