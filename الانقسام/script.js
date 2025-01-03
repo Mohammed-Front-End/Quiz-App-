@@ -105,7 +105,7 @@ function loadQuestion() {
 }
 
 function startTimer() {
-  let time = 90; // مدة الوقت لكل سؤال
+  let time = 230; // مدة الوقت لكل سؤال
   const timerElement = document.getElementById("time");
   timerElement.textContent = time;
 
