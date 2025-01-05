@@ -1,12 +1,12 @@
 // Select Elements
-let countSpan = document.querySelector('.quiz-app .count span')
-let bulletsSpansContainer = document.querySelector('.bullets .spans')
-let quizArea = document.querySelector('.quiz-area');
-let answersArea = document.querySelector('.answers-area');
+let countSpan = document.querySelector(".quiz-app .count span");
+let bulletsSpansContainer = document.querySelector(".bullets .spans");
+let quizArea = document.querySelector(".quiz-area");
+let answersArea = document.querySelector(".answers-area");
 let submitButton = document.querySelector(".submit-button");
-let bulletsElement = document.querySelector('.quiz-app .bullets')
-let results = document.querySelector('.results');
-let countDownElement = document.querySelector('.countDown')
+let bulletsElement = document.querySelector(".quiz-app .bullets");
+let results = document.querySelector(".results");
+let countDownElement = document.querySelector(".countDown");
 
 // Set Options
 let currentIndex = 0;
@@ -31,7 +31,7 @@ function getQuestions() {
         questionsObject.questions[currentIndex].difficulty
       );
       countDown(initialDuration, questionsCount);
-
+      //سسسس
       // عند النقر على زر الإرسال
       submitButton.onclick = function () {
         let theRightAnswer = questionsObject.questions[currentIndex].answer;
@@ -63,23 +63,22 @@ function getQuestions() {
   myRequest.open("GET", "questions.JSON", true);
   myRequest.send();
 }
-getQuestions() ;
+getQuestions();
 
-function CreateBullets (num){
+function CreateBullets(num) {
   countSpan.innerHTML = num;
   // create spans
   for (let i = 0; i < num; i++) {
     // Create Bullet
-    let theBullet = document.createElement('span');
+    let theBullet = document.createElement("span");
     // Check if its first span
     if (i === 0) {
-      theBullet.className = 'on';
-    };
-    // append bullets to main bullet container 
+      theBullet.className = "on";
+    }
+    // append bullets to main bullet container
     bulletsSpansContainer.appendChild(theBullet);
-  };
-};
-
+  }
+}
 
 function addQuestionData(obj, count) {
   if (currentIndex < count) {
@@ -121,7 +120,6 @@ function addQuestionData(obj, count) {
   }
 }
 
-
 function checkAnswer(ranswer, count) {
   let answer = document.getElementsByName("questions");
   let theChoosenAnswer;
@@ -146,17 +144,15 @@ function checkAnswer(ranswer, count) {
   }
 }
 
-
-function handelBullets(){
-  let handelSpan = document.querySelectorAll('.bullets .spans span')
+function handelBullets() {
+  let handelSpan = document.querySelectorAll(".bullets .spans span");
   let arrayOfSpans = Array.from(handelSpan);
-  arrayOfSpans.forEach((span,index)=>{
-    if(currentIndex === index){
-      span.classList.add('on')
+  arrayOfSpans.forEach((span, index) => {
+    if (currentIndex === index) {
+      span.classList.add("on");
     }
-  })
+  });
 }
-
 
 function showResults(count) {
   let theResult;
@@ -199,8 +195,6 @@ function showResults(count) {
     solutionsDiv.innerHTML = allQuestionsHTML;
     results.appendChild(solutionsDiv);
 
-
-
     //Add button to proceed to the next exam
     let nextExamButton = document.createElement("button");
     nextExamButton.className = "next-exam-button";
@@ -210,12 +204,8 @@ function showResults(count) {
       window.location.href = "./الانقسام/index.html"; // استبدل بالمسار الصحيح
     };
     results.appendChild(nextExamButton);
-
-
   }
 }
-
-
 
 function countDown(duration, count) {
   if (currentIndex < count) {
