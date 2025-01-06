@@ -2,21 +2,21 @@ const questions = [
   {
     id: 1,
     question:
-      "صوب: تعرضت السلالة المغولية للهجرات الإجبارية إلى الأميركيتين في الماضي.",
-    correctAnswer: "السلالة الزنجية",
+      "صوب: تعرضت السلالة (المغولية) للهجرات الإجبارية إلى الأميركيتين في الماضي.",
+    answer: "السلالة الزنجية",
     difficulty: "medium",
   },
   {
     id: 2,
-    question: "صوب: جماعة البانتو تنتمي لسلالة الاسكيمو.",
-    correctAnswer: "السلالة الزنجية",
+    question: "صوب: جماعة (البانتو) تنتمي لسلالة الاسكيمو.",
+    answer: "السلالة الزنجية",
     difficulty: "medium",
   },
   {
     id: 3,
-    question: "لماذا تزيد النسبة المغولية عن 40% من سكان العالم؟",
+    question: "لماذا تزيد النسبة (المغولية) عن 40% من سكان العالم؟",
     answer:
-      "لأن النسبة الأكبر من سكان الصين وجنوب شرق آسيا ينتمون للسلالة المغولية، وهما من أكثر مناطق العالم كثافة سكانية.",
+      "لأن النسبة الأكبر من سكان الصين وجنوب شرق آسيا ينتمون للسلالة (المغولية،) وهما من أكثر مناطق العالم كثافة سكانية.",
     difficulty: "medium",
   },
   {
@@ -33,6 +33,7 @@ const questions = [
     difficulty: "hard",
   },
 ];
+
 window.onload = () => {
   // تحديث عدد الأسئلة عند تحميل الصفحة
   const totalQuestionsElement = document.getElementById("total-questions");
@@ -65,6 +66,8 @@ document.getElementById("start-btn").addEventListener("click", () => {
 
 // دالة لمقارنة الإجابات بشكل صحيح بعد إزالة النقاط والفواصل غير الضرورية
 function normalizeAnswer(answer) {
+  // التحقق إذا كانت الإجابة فارغة أو غير معرفة
+  if (!answer) return ""; // إذا كانت الإجابة فارغة أو غير معرفة، إرجاع سلسلة فارغة
   return answer
     .replace(/[.,?!؛؟"']/g, "") // إزالة النقاط والفواصل وعلامات الاقتباس
     .replace(/\s+/g, " ") // إزالة المسافات الزائدة
@@ -107,7 +110,7 @@ function loadQuestion() {
 }
 
 function startTimer() {
-  let time = 120; // مدة الوقت لكل سؤال
+  let time = 150; // مدة الوقت لكل سؤال
   const timerElement = document.getElementById("time");
   timerElement.textContent = time;
 
@@ -145,10 +148,10 @@ function submitAnswer() {
   // تحقق من صحة الإجابة
   if (normalizedUserAnswer === normalizedCorrectAnswer) {
     // عرض التهنئة فقط عند الإجابة الصحيحة
+
     showCongratulations();
   }
 }
-
 
 // دالة لحفظ الإجابة
 function saveAnswer() {
@@ -236,11 +239,6 @@ function showResults() {
     const correctAnswerNormalized = normalizeAnswer(questions[index].answer);
     return userAnswerNormalized === correctAnswerNormalized;
   });
-
-  if (allAnswersCorrect) {
-    // عرض التهنئة والمفرقعات إذا كانت جميع الإجابات صحيحة
-    showCongratulations();
-  }
 }
 
 retryBtn.addEventListener("click", () => {
@@ -250,28 +248,3 @@ retryBtn.addEventListener("click", () => {
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
 });
-
-// دالة لعرض المفرقعات عند الإجابة الصحيحة في النهاية
-function showCongratulations() {
-  Swal.fire({
-    title: "تهانينا!",
-    text: "لقد أجبت على جميع الأسئلة بشكل صحيح! ممتاز!",
-    icon: "success",
-    confirmButtonText: "شكرًا",
-    willClose: () => {
-      // بعد إغلاق التنبيه، نعرض المفرقعات
-      fireConfetti();
-    },
-  });
-}
-
-// دالة لإظهار المفرقعات
-function fireConfetti() {
-  const confettiElement = document.createElement("div");
-  confettiElement.classList.add("confetti");
-  document.body.appendChild(confettiElement);
-
-  setTimeout(() => {
-    confettiElement.remove();
-  }, 4000); // إزالة المفرقعات بعد 4 ثوانٍ
-}
