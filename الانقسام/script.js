@@ -52,29 +52,6 @@ const questions = [
   },
 ];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.onload = () => {
   // تحديث عدد الأسئلة عند تحميل الصفحة
   const totalQuestionsElement = document.getElementById("total-questions");
@@ -141,17 +118,15 @@ function loadQuestion() {
   // تعطيل زر "التالي" في البداية
   nextBtn.disabled = true;
   nextBtn.classList.remove("hidden"); // إظهار زر "التالي" دائمًا
-
   // تفعيل زر "التالي" عندما يتم كتابة إجابة
   userAnswerField.addEventListener("input", () => {
     nextBtn.disabled = userAnswerField.value.trim() === ""; // تفعيل الزر عند كتابة الإجابة
   });
-
   startTimer(); // بدء المؤقت
 }
 
 function startTimer() {
-  let time = 150; // مدة الوقت لكل سؤال
+  let time = 90; // مدة الوقت لكل سؤال
   const timerElement = document.getElementById("time");
   timerElement.textContent = time;
 
