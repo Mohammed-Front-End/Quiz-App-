@@ -2,268 +2,128 @@
   "questions": [
     {
       "id": 1,
-      "question": "ما مفرد (نتائج)؟",
-      "options": ["نتيجة", "منتج", "ناتج"],
-      "answer": "نتيجة",
+      "question": "The pelican has two.......... to fly with.",
+      "options": ["wings", "legs", "beaks"],
+      "answer": "wings",
       "difficulty": "easy"
     },
     {
       "id": 2,
-      "question": "ما جمع (جاهل)؟",
-      "options": ["جاهلون", "جُهّال", "جَهَلة"],
-      "answer": "جاهلون",
+      "question": "These are my father's tools. He uses them to.........things.",
+      "options": ["fix", "break", "move"],
+      "answer": "fix",
       "difficulty": "easy"
     },
     {
       "id": 3,
-      "question": "ما المراد بـ (قوامًا) في قوله (وكان بين ذلك قوامًا)؟",
-      "options": ["ميزانًا وعدلًا", "وسطًا", "اعتدالًا"],
-      "answer": "وسطًا",
-      "difficulty": "medium"
+      "question": "I buy clothes and shoes at the.................?",
+      "options": ["mall", "library", "hospital"],
+      "answer": "mall",
+      "difficulty": "easy"
     },
     {
       "id": 4,
-      "question": "ما علاقة الجملة (إن عذابها كان غرامًا) بما قبلها؟",
-      "options": ["تعليل لما سبق.", "تأكيد لما سبق.", "تفسير لما سبق."],
-      "answer": "تعليل لما سبق.",
-      "difficulty": "medium"
+      "question": "The solar energy is........energy.",
+      "options": ["renewable", "non-renewable", "limited"],
+      "answer": "renewable",
+      "difficulty": "easy"
     },
     {
       "id": 5,
-      "question": "تعبير (ربنا اصرف عنا عذاب جهنم) يفيد:",
-      "options": ["التمني.", "الدعاء.", "التحذير."],
-      "answer": "الدعاء.",
+      "question": "A........... helps children find the information they need in the library.",
+      "options": ["librarian", "teacher", "student"],
+      "answer": "librarian",
       "difficulty": "easy"
     },
     {
       "id": 6,
-      "question": "ما إعراب (فعال)؟",
-      "options": [
-        "اسم مرفوع بالضمة الظاهرة",
-        "اسم مجرور وعلامة جره الكسرة",
-        "اسم معطوف مرفوع وعلامة رفعه الضمة الظاهرة",
-        "اسم منصوب بالفتحة الظاهرة",
-        "اسم مضاف مرفوع"
-      ],
-      "answer": "اسم معطوف مرفوع وعلامة رفعه الضمة الظاهرة",
-      "difficulty": "hard"
+      "question": "Fishermen......thousands of fish in the sea.",
+      "options": ["catch", "find", "lose"],
+      "answer": "catch",
+      "difficulty": "easy"
     },
     {
       "id": 7,
-      "question": "ما إعراب (غير)؟",
-      "options": [
-        "اسم منصوب وعلامة نصبه الكسرة",
-        "اسم مجرور بحرف الجر",
-        "اسم مضاف منصوب",
-        "اسم معطوف منصوب وعلامة نصبه الفتحة الظاهرة",
-        "اسم معطوف مرفوع بالضمة"
-      ],
-      "answer": "اسم معطوف منصوب وعلامة نصبه الفتحة الظاهرة",
-      "difficulty": "hard"
+      "question": "The.............works in the education industry.",
+      "options": ["teacher", "doctor", "engineer"],
+      "answer": "teacher",
+      "difficulty": "easy"
     },
     {
       "id": 8,
-      "question": "بما تفسر: إمكانية تحقيق البحوث في الذرة الخير والسلام للبشرية؟",
-      "options": [
-        "لأنها تزيد من خطر الحروب",
-        "لأنها تستخدم فقط في المجالات العسكرية",
-        "لأنها تساهم في تلوث البيئة",
-        "لأنها تقضي على الأمراض بشكل نهائي",
-        "لأنها تسهم في تطوير الطب والعلاج"
-      ],
-      "answer": "لأنها تسهم في تطوير الطب والعلاج",
-      "difficulty": "medium"
+      "question": "The crocodile is.......... and scary.",
+      "options": ["big", "small", "friendly"],
+      "answer": "big",
+      "difficulty": "easy"
     },
-
     {
       "id": 9,
-      "question": "ما الكلمة الأقرب في المعنى إلى (تخفيف)؟",
-      "options": ["تقليل", "إزالة", "إلغاء", "تقليل", "زيادة", "تحسين"],
-      "answer": "تقليل",
-      "difficulty": "medium"
+      "question": "......fix cars and buses that take us to school.",
+      "options": ["Mechanics", "Drivers", "Teachers"],
+      "answer": "Mechanics",
+      "difficulty": "easy"
     },
     {
       "id": 10,
-      "question": "ما إعراب (السلام) في جملة: 'تحقيق السلام للبشرية هدف سامٍ'؟",
-      "options": [
-        "مبتدأ مرفوع وعلامة رفعه الضمة",
-        "خبر مرفوع وعلامة رفعه الضمة",
-        "مضاف إليه مجرور وعلامة جره الكسرة",
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "فاعل مرفوع وعلامة رفعه الضمة"
-      ],
-      "answer": "مفعول به منصوب وعلامة نصبه الفتحة",
-      "difficulty": "hard"
+      "question": "I'm a ..... I work in the tourism industry.",
+      "options": ["tour guide", "teacher", "engineer"],
+      "answer": "tour guide",
+      "difficulty": "easy"
     },
     {
       "id": 11,
-      "question": "ما نوع الجمع في كلمة (البحوث)؟",
-      "options": [
-        "جمع مؤنث سالم",
-        "جمع مذكر سالم",
-        "جمع شاذ",
-        "اسم مفرد",
-        "جمع تكسير"
-      ],
-      "answer": "جمع تكسير",
-      "difficulty": "hard"
+      "question": "My uncle is a ........ animal.",
+      "options": ["strong", "wild", "friendly"],
+      "answer": "wild",
+      "difficulty": "easy"
     },
     {
       "id": 12,
-      "question": "ما أصل كلمة (ذرة) في اللغة العربية؟",
-      "options": ["ذَرَرَ", "ذَرَأَ", "ذَرَّ", "ذَرُوَ", "ذَرَّيَ"],
-      "answer": "ذَرَّ",
-      "difficulty": "very hard"
+      "question": "Tomatoes have..........inside. We can use them to grow more plants.",
+      "options": ["seeds", "leaves", "flowers"],
+      "answer": "seeds",
+      "difficulty": "easy"
     },
     {
       "id": 13,
-      "question": "بما تفسر: دعوة سميرة موسى لاستخدام الذرة سلمياً؟",
-      "options": [
-        "لرغبتها في تخفيف معاناة المرضى وتطوير العلوم الطبية",
-        "لزيادة إنتاج الأسلحة في الدول النامية",
-        "لتحقيق التفوق العسكري",
-        "لتحقيق الدمار الشامل",
-        "لتقليل استخدام الطب التقليدي"
-      ],
-      "answer": "لرغبتها في تخفيف معاناة المرضى وتطوير العلوم الطبية",
-      "difficulty": "hard"
+      "question": "She lives on a small............. that move on water.",
+      "options": ["boat", "house", "raft"],
+      "answer": "boat",
+      "difficulty": "easy"
     },
     {
       "id": 14,
-      "question": "ما الفرق بين (ذرة) و(الذرّة) في المعنى؟",
-      "options": [
-        "ذرة تعني الحبوب وذرّة تعني وحدة صغيرة في المادة",
-        "ذرة تعني الوحدة الصغيرة وذرّة تعني الغذاء",
-        "ذرة تعني الذهب وذرّة تعني الفضة",
-        "ذرة تعني الطاقة وذرّة تعني العدم",
-        "ذرة تعني الحروب وذرّة تعني السلام"
-      ],
-      "answer": "ذرة تعني الحبوب وذرّة تعني وحدة صغيرة في المادة",
-      "difficulty": "hard"
+      "question": "Fennec foxes and camels are............... animals.",
+      "options": ["desert", "rainforest", "aquatic"],
+      "answer": "desert",
+      "difficulty": "easy"
     },
     {
       "id": 15,
-      "question": "ما إعراب كلمة (البحوث) في الجملة: 'البحوث العلمية تفيد المجتمع'؟",
-      "options": [
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "اسم مرفوع وعلامة رفعه الضمة",
-        "مبتدأ مرفوع وعلامة رفعه الضمة",
-        "خبر مرفوع وعلامة رفعه الضمة",
-        "مفعول فيه منصوب"
-      ],
-      "answer": "مبتدأ مرفوع وعلامة رفعه الضمة",
-      "difficulty": "very hard"
+      "question": "Ali used his............. to open old radios and fix them.",
+      "options": ["tools", "books", "paint"],
+      "answer": "tools",
+      "difficulty": "easy"
     },
     {
       "id": 16,
-      "question": "ما إعراب كلمة (تحقيق) في الجملة: 'تحقيق الأهداف ضروري'؟",
-      "options": [
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "اسم فاعل مرفوع وعلامة رفعه الضمة",
-        "مصدر منصوب وعلامة نصبه الفتحة",
-        "مفعول فيه منصوب",
-        "اسم مفعول مجرور"
-      ],
-      "answer": "مصدر منصوب وعلامة نصبه الفتحة",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 17,
-      "question": "ما نوع الجمع في كلمة (الذرات)؟",
-      "options": [
-        "جمع تكسير",
-        "جمع مذكر سالم",
-        "جمع مؤنث سالم",
-        "جمع شاذ",
-        "اسم مفرد"
-      ],
-      "answer": "جمع تكسير",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 18,
-      "question": "ما إعراب كلمة (الطاقة) في الجملة: 'الطاقة النووية تستخدم في الطب'؟",
-      "options": [
-        "مبتدأ مرفوع وعلامة رفعه الضمة",
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "اسم مجرور بحرف الجر وعلامة جره الكسرة",
-        "خبر مرفوع وعلامة رفعه الضمة",
-        "مفعول فيه منصوب"
-      ],
-      "answer": "مبتدأ مرفوع وعلامة رفعه الضمة",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 19,
-      "question": "ما نوع الجملة في قولنا: 'البحوث مفيدة للبشرية'؟",
-      "options": [
-        "جملة اسمية",
-        "جملة فعلية",
-        "جملة شرطية",
-        "جملة استفهامية",
-        "جملة تعجبية"
-      ],
-      "answer": "جملة اسمية",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 20,
-      "question": "ما إعراب كلمة (الخير) في الجملة: 'الخير يعم جميع الناس'؟",
-      "options": [
-        "مبتدأ مرفوع وعلامة رفعه الضمة",
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "خبر مرفوع وعلامة رفعه الضمة",
-        "اسم مجرور بحرف الجر وعلامة جره الكسرة",
-        "اسم مفعول مجرور"
-      ],
-      "answer": "مفعول به منصوب وعلامة نصبه الفتحة",
-      "difficulty": "very hard"
+      "question": "Sun, wind, and .............. are renewable energy sources.",
+      "options": ["water", "coal", "oil"],
+      "answer": "water",
+      "difficulty": "easy"
     },
     {
       "id": 21,
-      "question": "ما نوع الإضافة في كلمة (الذرة النووية)؟",
+      "question": "Tomatoes have seeds inside. We can use these seeds to (1)........ new plants. It is called (2) ........... We put the seeds in the soil and new plants. (3) .......... them every day. Plants grow taller and bigger. The plants finally grow (4)............. and the flowers become tomatoes.",
       "options": [
-        "إضافة نوعية",
-        "إضافة مفعول",
-        "إضافة مكانية",
-        "إضافة زائدة",
-        "إضافة ظرفية"
+        ["1-red", "2-water", "3-germination", "4-flowers", "5-grow"],
+        ["1-germination", "2-grow", "3-red", "4-water", "5-flowers"],
+        ["1-flowers", "2-red", "3-grow", "4-water", "5-germination"],
+        ["1-water", "2-flowers", "3-red", "4-germination", "5-grow"],
+        ["1-grow", "2-red", "3-flowers", "4-germination", "5-water"]
       ],
-      "answer": "إضافة نوعية",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 22,
-      "question": "ما إعراب كلمة (استخدام) في الجملة: 'استخدام الطاقة النووية له فوائد كثيرة'؟",
-      "options": [
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "اسم فاعل مرفوع وعلامة رفعه الضمة",
-        "مصدر منصوب وعلامة نصبه الفتحة",
-        "اسم مفعول مجرور وعلامة جره الكسرة",
-        "مفعول فيه منصوب"
-      ],
-      "answer": "مصدر منصوب وعلامة نصبه الفتحة",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 23,
-      "question": "ما مضاد كلمة (مستعصية) في الجملة: 'الأمراض المستعصية تتطلب علاجاً متقدماً'؟",
-      "options": ["سهلة", "عميقة", "شديدة", "نادرة", "علاجية"],
-      "answer": "سهلة",
-      "difficulty": "very hard"
-    },
-    {
-      "id": 24,
-      "question": "ما إعراب كلمة (السرطان) في الجملة: 'السرطان مرض خطير'؟",
-      "options": [
-        "مبتدأ مرفوع وعلامة رفعه الضمة",
-        "مفعول به منصوب وعلامة نصبه الفتحة",
-        "اسم مجرور بحرف الجر وعلامة جره الكسرة",
-        "خبر مرفوع وعلامة رفعه الضمة",
-        "اسم مفعول مجرور"
-      ],
-      "answer": "مبتدأ مرفوع وعلامة رفعه الضمة",
-      "difficulty": "very hard"
+      "answer": ["grow", "germination", "water", "flowers", "red"],
+      "difficulty": "medium"
     }
   ]
 }
