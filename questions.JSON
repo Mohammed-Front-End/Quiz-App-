@@ -1,260 +1,102 @@
 {
   "questions": [
-
     {
       "id": 1,
-      "question": "السؤال الأول: أختر الإجابة الصحيحة مما بين القوسين:\nعندما يسقط شعاع ضوء عموديًا على السطح العاكس، فإن زاوية الانعكاس تساوي .............. .",
-      "options": ["60°", "45°", "90°", "صفر"],
-      "answer": "صفر",
-      "difficulty": "medium"
+      "question": "It`s .......... (good) to buy clothes in shops than online.",
+      "options": ["better", "best", "good", "worse"],
+      "answer": "better",
+      "difficulty": "Easy"
     },
     {
       "id": 2,
-      "question": "حدثت مجموعة من التغيرات العكسية أثناء الانقسام الميتوزي في الطور .............. .",
-      "options": ["الانفصالي", "النهايي", "التمهيدي", "الاستوائي"],
-      "answer": "الاستوائي",
-      "difficulty": "hard"
+      "question": "Next Monday, we ....... (try) a new kind of medicine. This is our plan for the next week.",
+      "options": ["try", "will try", "are trying", "tried"],
+      "answer": "are trying",
+      "difficulty": "Medium"
     },
+
     {
       "id": 3,
-      "question": "استخرج الكلمة المختلفة في الجمل الآتية:\n1. الكتلة - الزمن - العجلة - المسافة.",
-      "options": ["الكتلة", "الزمن", "العجلة", "المسافة"],
-      "answer": "الزمن",
-      "difficulty": "medium"
+      "question": "Omar was ......... (disappointing) when he heard the bad news.",
+      "options": [
+        "disappointing",
+        "disappointment",
+        "disappointed",
+        "disappoints"
+      ],
+      "answer": "disappointed",
+      "difficulty": "Medium"
     },
+
     {
       "id": 4,
-      "question": "استخرج الكلمة المختلفة في الجمل الآتية:\nمعتدلة - مساوية للجسم - معكوسة - حقيقية.",
-      "options": ["معتدلة", "مساوية للجسم", "معكوسة", "حقيقية"],
-      "answer": "معكوسة",
-      "difficulty": "medium"
+      "question": "Both Saudi Arabia ........... (or) Cameroon have won a match against Argentina in the World Cup.",
+      "options": ["but", "and", "or", "nor"],
+      "answer": "and",
+      "difficulty": "Medium"
     },
+
     {
       "id": 5,
-      "question": "استخرج الكلمة المختلفة في الجمل الآتية:\nحيوان الإسفنج - فطر الخلمة - جنم البحر - الهيدرا.",
-      "options": ["حيوان الإسفنج", "فطر الخلمة", "جنم البحر", "الهيدرا"],
-      "answer": "فطر الخلمة",
-      "difficulty": "medium"
+      "question": "Have you ever .......... (be) Aswan in Winter?",
+      "options": ["be", "been", "being", "was"],
+      "answer": "been",
+      "difficulty": "Medium"
     },
     {
       "id": 6,
-      "question": "استخرج الكلمة المختلفة في الجمل الآتية:\nتستخدم في المناظير - تستخدم في المصابيح الأمامية للسيارات - تستخدم في الميكروسكوب - تستخدم في النظارات.",
+      "question": "Jana ....... (travel) abroad three times since she started her new job.",
       "options": [
-        "تستخدم في المناظير",
-        "تستخدم في المصابيح الأمامية للسيارات",
-        "تستخدم في الميكروسكوب",
-        "تستخدم في النظارات"
+        "is travelling",
+        "has been travelled",
+        "has travelled",
+        "travelled"
       ],
-      "answer": "تستخدم في المصابيح الأمامية للسيارات",
-      "difficulty": "medium"
+      "answer": "has travelled",
+      "difficulty": "Medium"
     },
     {
       "id": 7,
-      "question": "اكتب المصطلح العلمي الدال على العبارات الآتية:\n1. السرعة التي يتحرك بها الجسم عندما يقطع مسافات متساوية في أزمنة متساوية.",
-      "options": [
-        "السرعة المتغيرة",
-        "السرعة المتوسطة",
-        "السرعة المنتظمة",
-        "السرعة النسبية"
-      ],
-      "answer": "السرعة المنتظمة",
-      "difficulty": "medium"
+      "question": "Before the internet, we ......... (have to) find all our information in books.",
+      "options": ["must", "had to", "don`t have to", "mustn`t"],
+      "answer": "had to",
+      "difficulty": "Easy"
     },
     {
       "id": 8,
-      "question": "اكتب المصطلح العلمي الدال على العبارات الآتية:\nمنطقة اتصال كروماتيد الكروموسوم مع.",
-      "options": ["السنترومير", "الكروماتين", "الكروموسوم", "الجين"],
-      "answer": "السنترومير",
-      "difficulty": "hard"
+      "question": "The next bus to Aswan ............ (leave) at 9 pm tonight.",
+      "options": ["will leave", "leaves", "is leaving", "is going to leave"],
+      "answer": "leaves",
+      "difficulty": "Medium"
     },
-    {
+        {
       "id": 9,
-      "question": "اكتب المصطلح العلمي الدال على العبارات الآتية:\nالمعدل الزمني للتغير في الإزاحة.",
-      "options": ["السرعة", "التسارع", "السرعة المتوسطة", "السرعة اللحظية"],
-      "answer": "السرعة",
-      "difficulty": "medium"
+      "question": "Think about making your story more ........ (interest) by adding adjectives and adverbs.",
+      "options": ["interesting", "interested", "interestingly", "interests"],
+      "answer": "interesting",
+      "difficulty": "Easy"
     },
     {
       "id": 10,
-      "question": "اكتب المصطلح العلمي الدال على العبارات الآتية:\nالمسافة التي يقطعها الضوء في سنة.",
-      "options": ["المتر", "السنة الضوئية", "الفارغ", "الطول الموجي"],
-      "answer": "السنة الضوئية",
-      "difficulty": "hard"
+      "question": "Jana ....... (travel) abroad three times since she started her new job.",
+      "options": ["is travelling", "has been travelled", "has travelled", "travelled"],
+      "answer": "has travelled",
+      "difficulty": "Medium"
     },
     {
       "id": 11,
-      "question": "ماذا يحدث في الحالات الآتية... ؟\n1. تزداد المسافة التي يقطعها الجسم إلى الضعف خلال نفس الزمن بالنسبة للسرعة.",
-      "options": [
-        "تزداد السرعة",
-        "تزداد العجلة",
-        "تزداد المسافة المتجهة",
-        "لا يحدث تغيير"
-      ],
-      "answer": "تزداد السرعة",
-      "difficulty": "medium"
+      "question": "Before the internet, we ......... (have to) find all our information in books.",
+      "options": ["must", "had to", "don`t have to", "mustn`t"],
+      "answer": "had to",
+      "difficulty": "Easy"
     },
     {
       "id": 12,
-      "question": "ماذا يحدث في الحالات الآتية... ؟\n2. سقوط شعاع ضوء على عدسة محدبة مارًا بمركزها البصري.",
-      "options": [
-        "ينكسر الشعاع",
-        "يمر الشعاع دون تغيير في الاتجاه",
-        "يتم جمع الشعاع في نقطة واحدة",
-        "يتم تفريق الشعاع"
-      ],
-      "answer": "يمر الشعاع دون تغيير في الاتجاه",
-      "difficulty": "medium"
-    },
-    {
-      "id": 13,
-      "question": "ماذا يحدث في الحالات الآتية... ؟\n3. عندما يتحرك الجسم بسرعة منتظمة (بالنسبة لعجلة حركته).",
-      "options": [
-        "العجلة تكون ثابتة",
-        "العجلة تتزايد",
-        "العجلة تتناقص",
-        "تكون الحركة غير منتظمة"
-      ],
-      "answer": "العجلة تكون ثابتة",
-      "difficulty": "medium"
-    },
-    {
-      "id": 14,
-      "question": "ماذا يحدث في الحالات الآتية... ؟\n4. فقد حيوان جنم البحر إحدى أذرعه وكانت تحتوي على جزء من القرص الوسطي.",
-      "options": [
-        "يستعيد الحيوان الذراع بسرعة",
-        "يفقد الحيوان القدرة على الحركة",
-        "يتم تعويض الذراع المفقودة",
-        "يستطيع الحيوان العيش بدون الذراع"
-      ],
-      "answer": "يتم تعويض الذراع المفقودة",
-      "difficulty": "medium"
-    },
-    {
-      "id": 15,
-      "question": "عدسة محدبة بعدها البؤري يساوي س سم وضع جسم على بعد س سم من مركزها البصري. وضح بالرسم خواص الصورة المتكونة.",
-      "options": [
-        "الصورة مقلوبة ومصغرة",
-        "الصورة مقلوبة ومكبرة",
-        "الصورة معتدلة ومكبرة",
-        "الصورة معتدلة ومصغرة"
-      ],
-      "answer": "الصورة مقلوبة ومصغرة",
-      "difficulty": "hard"
-    },
-
-    {
-      "id": 16,
-      "question": "ضع علامة ✓ أو ✗ أمام العبارات الآتية:\n3. نشر العالم بالاس بحث بعنوان »نظام العالم لتفسير نشأة الكون«.",
-      "options": ["✓", "✗"],
-      "answer": "✗",
-      "difficulty": "hard"
-    },
-    {
-      "id": 17,
-      "question": "ضع علامة ✓ أو ✗ أمام العبارات الآتية:\n4. تكون صورة تقديرية معتدلة مكبرة.",
-      "options": ["✓", "✗"],
-      "answer": "✓",
-      "difficulty": "medium"
-    },
-    {
-      "id": 18,
-      "question": "أكمل العبارات الآتية:\n1. يعالج قصر النظر باستخدام عدسة ..............، بينما يعالج طول النظر باستخدام عدسة ............ .",
-      "options": [
-        "محدبة, مقعرة",
-        "مقعرة, محدبة",
-        "اسطوانية, كروية",
-        "كروية, اسطوانية"
-      ],
-      "answer": "مقعرة, محدبة",
-      "difficulty": "medium"
-    },
-
-    {
-      "id": 19,
-      "question": "أكمل العبارات الآتية:\n3. مؤسس نظرية النجم العابر هو العالم ........... .",
-      "options": ["إسحاق نيوتن", "ألبرت أينشتاين", "إدوارد هابل", "فريد هويل"],
-      "answer": "فريد هويل",
-      "difficulty": "hard"
-    },
-
-    {
-      "id": 20,
-      "question": "ماذا يحدث في الحالات الآتية؟\n1. عدم حدوث ظاهرة العبور أثناء الطور التمهيدي الأول.",
-      "options": [
-        "لا يحدث تنوع الصفات الوراثية في أفراد النوع الواحد.",
-        "يحدث تنوع الصفات الوراثية في أفراد النوع الواحد.",
-        "يحدث انقسام الخلية.",
-        "يتكون شكل جديد للصفات."
-      ],
-      "answer": "لا يحدث تنوع الصفات الوراثية في أفراد النوع الواحد.",
-      "difficulty": "hard"
-    },
-    {
-      "id": 21,
-      "question": "ماذا يحدث إذا وضع جسم أمام عدسة محدبة على مسافة تساوي البعد البؤري؟",
-      "options": [
-        "تتكون له صورة حقيقية.",
-        "تتكون له صورة وهمية.",
-        "لا تتكون له صورة.",
-        "تتكون صورة مقلوبة."
-      ],
-      "answer": "لا تتكون له صورة.",
-      "difficulty": "hard"
-    },
-    {
-      "id": 22,
-      "question": "ماذا يحدث عندما يتركز ضوء الليزر على جزيئات الذهب النانوية التي يتم حقنها لمرضى السرطان؟",
-      "options": [
-        "تمتص الطاقة وتحولها إلى طاقة حرارية تؤدي إلى حرق وقتل الخلايا المصابة.",
-        "تؤدي إلى تفكيك الخلايا السليمة.",
-        "تؤدي إلى نمو الخلايا المصابة.",
-        "تمتص الطاقة ولكن لا تؤثر في الخلايا."
-      ],
-      "answer": "تمتص الطاقة وتحولها إلى طاقة حرارية تؤدي إلى حرق وقتل الخلايا المصابة.",
-      "difficulty": "hard"
-    },
-    {
-      "id": 23,
-      "question": "استخرج الكلمة غير المناسبة، ثم اكتب ما يربط بين باقي الكلمات في العبارات الآتية:\n3. فطر الخميرة، الرباميسيوم، الهيدرا، الإسفنج ( )كائنات تتكاثر بالتبرعم.",
-      "options": ["الإسفنج", "الهيدرا", "الرباميسيوم", "فطر الخميرة"],
-      "answer": "الرباميسيوم",
-      "difficulty": "medium"
-    },
-
-    {
-      "id": 24,
-      "question": "احسب السرعة الفعلية لسيارة تبدو سرعتها 30 كم/س بالنسبة لمراقب يتحرك في عكس الاتجاه بسرعة 2 كم/س.\nالسرعة الفعلية = السرعة النسبية - سرعة المراقب.",
-      "options": ["32 كم/س", "30 كم/س", "28 كم/س", "35 كم/س"],
-      "answer": "32 كم/س",
-      "difficulty": "medium"
-    },
-    {
-      "id": 25,
-      "question": " العلاقة البيانية (مسافة – زمن) للحركة المنتظمة بسرعة ثابتة يمثلها خط مستقيم يوازي محور الزمن.",
-      "options": ["✓", "✗"],
-      "answer": "✗",
-      "difficulty": "medium"
-    },
-    {
-      "id": 26,
-      "question": " عند سقوط شعاع ضوء على عدسة محدبة مارًا بمركز تكورها فإنه ينكسر.",
-      "options": ["✓", "✗"],
-      "answer": "✗",
-      "difficulty": "medium"
-    },
-    {
-      "id": 27,
-      "question": " تتكاثر الأوليات الحيوانية بالانشطار الثنائي.",
-      "options": ["✓", "✗"],
-      "answer": "✓",
-      "difficulty": "medium"
-    },
-    {
-      "id": 28,
-      "question": "إذا قطعت سيارة مسافة 100 متر في دقيقة واحدة فإن سرعتها تساوي 1.67 متر/ثانية.",
-      "options": ["✓", "✗"],
-      "answer": "✓",
-      "difficulty": "medium"
+      "question": "The next bus to Aswan ............ (leave) at 9 pm tonight.",
+      "options": ["will leave", "leaves", "is leaving", "is going to leave"],
+      "answer": "leaves",
+      "difficulty": "Medium"
     }
+
   ]
 }
