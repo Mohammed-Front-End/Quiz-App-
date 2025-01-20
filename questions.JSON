@@ -2,101 +2,70 @@
   "questions": [
     {
       "id": 1,
-      "question": "It`s .......... (good) to buy clothes in shops than online.",
-      "options": ["better", "best", "good", "worse"],
-      "answer": "better",
-      "difficulty": "Easy"
+      "question": "The main idea of the passage is .......?",
+      "options": [
+        "continuous work is necessary",
+        "continuous work is unnecessary",
+        "having a rest is necessary",
+        "having a rest is unnecessary"
+      ],
+      "answer": "having a rest is necessary",
+      "difficulty": "medium"
     },
     {
       "id": 2,
-      "question": "Next Monday, we ....... (try) a new kind of medicine. This is our plan for the next week.",
-      "options": ["try", "will try", "are trying", "tried"],
-      "answer": "are trying",
-      "difficulty": "Medium"
+      "question": "What can happen if we do not stop to rest?",
+      "options": [
+        "We can think more clearly",
+        "Our work quality may improve",
+        "We may make mistakes",
+        "We may have more energy"
+      ],
+      "answer": "We may make mistakes",
+      "difficulty": "medium"
     },
-
     {
       "id": 3,
-      "question": "Omar was ......... (disappointing) when he heard the bad news.",
+      "question": "How should we spend our weekends according to the passage?",
       "options": [
-        "disappointing",
-        "disappointment",
-        "disappointed",
-        "disappoints"
+        "By continuing to work",
+        "By resting at home",
+        "By wasting time",
+        "By spending time in the open and enjoying ourselves"
       ],
-      "answer": "disappointed",
-      "difficulty": "Medium"
+      "answer": "By spending time in the open and enjoying ourselves",
+      "difficulty": "medium"
     },
-
     {
       "id": 4,
-      "question": "Both Saudi Arabia ........... (or) Cameroon have won a match against Argentina in the World Cup.",
-      "options": ["but", "and", "or", "nor"],
-      "answer": "and",
-      "difficulty": "Medium"
+      "question": "What is one of the ways in which nature renews our energy according to the passage?",
+      "options": ["Eating", "Exercising", "Sleeping", "Socializing"],
+      "answer": "Sleeping",
+      "difficulty": "hard"
     },
-
     {
       "id": 5,
-      "question": "Have you ever .......... (be) Aswan in Winter?",
-      "options": ["be", "been", "being", "was"],
-      "answer": "been",
-      "difficulty": "Medium"
+      "question": "What is the main idea of the second paragraph?",
+      "options": [
+        "Resting is not necessary for good work.",
+        "Lack of rest leads to mistakes and poor quality work.",
+        "Continuous work improves our productivity.",
+        "Sleep is not important for energy renewal."
+      ],
+      "answer": "Lack of rest leads to mistakes and poor quality work.",
+      "difficulty": "medium"
     },
     {
       "id": 6,
-      "question": "Jana ....... (travel) abroad three times since she started her new job.",
+      "question": "What is the main message of the story?",
       "options": [
-        "is travelling",
-        "has been travelled",
-        "has travelled",
-        "travelled"
+        "We should work continuously without taking breaks.",
+        "Taking rest and recreation is essential for maintaining energy and good work quality.",
+        "Resting is a waste of time and should be avoided.",
+        "Weekends should be used for work only."
       ],
-      "answer": "has travelled",
-      "difficulty": "Medium"
-    },
-    {
-      "id": 7,
-      "question": "Before the internet, we ......... (have to) find all our information in books.",
-      "options": ["must", "had to", "don`t have to", "mustn`t"],
-      "answer": "had to",
-      "difficulty": "Easy"
-    },
-    {
-      "id": 8,
-      "question": "The next bus to Aswan ............ (leave) at 9 pm tonight.",
-      "options": ["will leave", "leaves", "is leaving", "is going to leave"],
-      "answer": "leaves",
-      "difficulty": "Medium"
-    },
-        {
-      "id": 9,
-      "question": "Think about making your story more ........ (interest) by adding adjectives and adverbs.",
-      "options": ["interesting", "interested", "interestingly", "interests"],
-      "answer": "interesting",
-      "difficulty": "Easy"
-    },
-    {
-      "id": 10,
-      "question": "Jana ....... (travel) abroad three times since she started her new job.",
-      "options": ["is travelling", "has been travelled", "has travelled", "travelled"],
-      "answer": "has travelled",
-      "difficulty": "Medium"
-    },
-    {
-      "id": 11,
-      "question": "Before the internet, we ......... (have to) find all our information in books.",
-      "options": ["must", "had to", "don`t have to", "mustn`t"],
-      "answer": "had to",
-      "difficulty": "Easy"
-    },
-    {
-      "id": 12,
-      "question": "The next bus to Aswan ............ (leave) at 9 pm tonight.",
-      "options": ["will leave", "leaves", "is leaving", "is going to leave"],
-      "answer": "leaves",
-      "difficulty": "Medium"
+      "answer": "Taking rest and recreation is essential for maintaining energy and good work quality.",
+      "difficulty": "medium"
     }
-
   ]
 }
