@@ -230,14 +230,14 @@ function countDown(duration, count) {
 function getDurationForDifficulty(difficulty) {
   switch (difficulty) {
     case "easy":
-      return 90; // 30 ثانية للمستوى السهل
+      return 450; // 30 ثانية للمستوى السهل
     case "medium":
-      return 90; // 60 ثانية للمستوى المتوسط
+      return 450; // 60 ثانية للمستوى المتوسط
     case "hard":
-      return 90; // 90 ثانية للمستوى الصعب
-    case "Very Difficult":
-      return 120; // 120  ثانية للمستوى الصعب جد
+      return 450; // 90 ثانية للمستوى الصعب
+    case "Very hard":
+      return 450; // 120  ثانية للمستوى الصعب جد
     default:
-      return 90; // الافتراضي 30 ثانية
+      return 450; // الافتراضي 30 ثانية
   }
 }
