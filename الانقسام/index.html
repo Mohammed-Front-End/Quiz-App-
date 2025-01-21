@@ -1,37 +1,56 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اختبار الأسئلة</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="/الانقسام/styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="quiz-app">
+      <div class="quiz-info">
+        <div class="category">
+          omar is booking a ticket to alex
+          <br /><br />
+          <!-- فاصل بين القطع -->
+          assistant how can i help you?
+          <br />
+          omar:(1).........................?
+          <br />
+          assistant: the ticket to alxcosts 100pounds.
+          <br /><br />
+          <!-- فاصل بين القطع -->
+          omar: (2)..................?
+          <br />
+          assistant: the train leaves from platform 5?
+          <br /><br />
+          <!-- فاصل بين القطع -->
+          omar: (3).........................?
+          <br />
+          assistant : the train leaves at 6 o'clock.
+          <br /><br />
+          <!-- فاصل بين القطع -->
+          omar: when does the train arrive?
+          <br />
+          assistant: (4).........................?
+          <br />
+          omar: (5).........................? `
+        </div>
+        <div class="count">Questions Count: <span></span></div>
+      </div>
 
-</head>
-<body>
-  <div id="app">
-    <!-- الشاشة الرئيسية -->
-    <div id="start-screen">
-      <h1>أهلاً بك في اختبار الأسئلة</h1>
-      <p id="question-count">يتكون الاختبار من <span id="total-questions"></span> أسئلة. لديك دقيقة ونصف لكل سؤال.</p>
-      <button id="start-btn">ابدأ الاختبار</button>
+      <div class="quiz-area"></div>
+
+      <div class="answers-area"></div>
+
+      <button class="submit-button">Submit Answer</button>
+      <div class="bullets">
+        <div class="spans"></div>
+        <div class="countDown"></div>
+      </div>
+      <div class="results"></div>
     </div>
 
-    <!-- شاشة الأسئلة -->
-    <div id="question-screen" class="hidden">
-      <p id="question-counter"></p>
-      <div id="question-container"></div>
-      <button id="next-btn" class="hidden">السؤال التالي</button>
-    </div>
-
-    <!-- شاشة النتيجة -->
-    <div id="result-screen" class="hidden">
-      <h1>نتيجتك النهائية:</h1>
-      <div id="result-container"></div>
-      <button id="retry-btn">إعادة الاختبار</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  </body>
 </html>
