@@ -1,216 +1,234 @@
-const questions = [];
+// Select Elements
+let countSpan = document.querySelector(".quiz-app .count span");
+let bulletsSpansContainer = document.querySelector(".bullets .spans");
+let quizArea = document.querySelector(".quiz-area");
+let answersArea = document.querySelector(".answers-area");
+let submitButton = document.querySelector(".submit-button");
+let bulletsElement = document.querySelector(".quiz-app .bullets");
+let results = document.querySelector(".results");
+let countDownElement = document.querySelector(".countDown");
 
-
-
-window.onload = () => {
-  // تحديث عدد الأسئلة عند تحميل الصفحة
-  const totalQuestionsElement = document.getElementById("total-questions");
-  totalQuestionsElement.textContent = questions.length;
-};
-
-let currentQuestionIndex = 0;
+// Set Options
+let currentIndex = 0;
+let rightAnswers = 0;
+let countDownIntervral;
+let questionsObject;
 let userAnswers = [];
-let score = 0;
-let timerInterval;
 
-const startScreen = document.getElementById("start-screen");
-const questionScreen = document.getElementById("question-screen");
-const resultScreen = document.getElementById("result-screen");
+function getQuestions() {
+  let myRequest = new XMLHttpRequest();
+  myRequest.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      questionsObject = JSON.parse(this.responseText);
+      let questionsCount = questionsObject.questions.length;
 
-const questionCounter = document.getElementById("question-counter");
-const questionContainer = document.getElementById("question-container");
-const nextBtn = document.getElementById("next-btn");
-const retryBtn = document.getElementById("retry-btn");
-const resultContainer = document.getElementById("result-container");
+      // إنشاء النقاط وإعداد الأسئلة
+      CreateBullets(questionsCount);
+      addQuestionData(questionsObject.questions[currentIndex], questionsCount);
 
-const userAnswerField = document.getElementById("user-answer");
-const timerElement = document.getElementById("time");
+      // بدء العد التنازلي بناءً على مستوى الصعوبة
+      let initialDuration = getDurationForDifficulty(
+        questionsObject.questions[currentIndex].difficulty
+      );
+      countDown(initialDuration, questionsCount);
+      //سسسس
+      // عند النقر على زر الإرسال
+      submitButton.onclick = function () {
+        let theRightAnswer = questionsObject.questions[currentIndex].answer;
+        currentIndex++;
+        checkAnswer(theRightAnswer, questionsCount);
 
-document.getElementById("start-btn").addEventListener("click", () => {
-  startScreen.classList.add("hidden");
-  questionScreen.classList.remove("hidden");
-  loadQuestion();
-});
+        quizArea.innerHTML = "";
+        answersArea.innerHTML = "";
 
-// دالة لمقارنة الإجابات بشكل صحيح بعد إزالة النقاط والفواصل غير الضرورية
-function normalizeAnswer(answer) {
-  // التحقق إذا كانت الإجابة فارغة أو غير معرفة
-  if (!answer) return ""; // إذا كانت الإجابة فارغة أو غير معرفة، إرجاع سلسلة فارغة
-  return answer
-    .replace(/[.,?!؛؟"']/g, "") // إزالة النقاط والفواصل وعلامات الاقتباس
-    .replace(/\s+/g, " ") // إزالة المسافات الزائدة
-    .trim() // إزالة المسافات في بداية ونهاية الجملة
-    .toLowerCase(); // تحويل النص إلى حروف صغيرة
-}
+        if (currentIndex < questionsCount) {
+          addQuestionData(
+            questionsObject.questions[currentIndex],
+            questionsCount
+          );
+          handelBullets();
+          clearInterval(countDownIntervral);
 
-function loadQuestion() {
-  const currentQuestion = questions[currentQuestionIndex];
+          // بدء العد التنازلي للسؤال التالي بناءً على مستوى الصعوبة
+          let nextDuration = getDurationForDifficulty(
+            questionsObject.questions[currentIndex].difficulty
+          );
+          countDown(nextDuration, questionsCount);
+        }
 
-  // تحديث العدادات
-  questionCounter.textContent = `السؤال ${currentQuestionIndex + 1} من ${
-    questions.length
-  }`;
-
-  // إنشاء عناصر السؤال ديناميكيًا
-  const questionHTML = `
-    <h2>${currentQuestion.question}</h2>
-    <textarea id="user-answer" placeholder="اكتب إجابتك هنا..."></textarea>
-    <p id="timer">الوقت المتبقي: <span id="time">90</span> ثانية</p>
-  `;
-
-  // إضافة المحتوى الجديد إلى العنصر
-  questionContainer.innerHTML = questionHTML;
-
-  // تعريف userAnswerField بعد إضافة HTML
-  const userAnswerField = document.getElementById("user-answer");
-  const nextBtn = document.getElementById("next-btn");
-
-  // تعطيل زر "التالي" في البداية
-  nextBtn.disabled = true;
-  nextBtn.classList.remove("hidden"); // إظهار زر "التالي" دائمًا
-  // تفعيل زر "التالي" عندما يتم كتابة إجابة
-  userAnswerField.addEventListener("input", () => {
-    nextBtn.disabled = userAnswerField.value.trim() === ""; // تفعيل الزر عند كتابة الإجابة
-  });
-  startTimer(); // بدء المؤقت
-}
-
-function startTimer() {
-  let time = 90; // مدة الوقت لكل سؤال
-  const timerElement = document.getElementById("time");
-  timerElement.textContent = time;
-
-  timerInterval = setInterval(() => {
-    if (time === 0) {
-      clearInterval(timerInterval);
-      submitAnswer(); // حفظ الإجابة تلقائيًا عند انتهاء الوقت
-      nextBtn.classList.remove("hidden"); // التأكد من أن زر "التالي" مرئي
-      goToNextQuestion(); // الانتقال للسؤال التالي
-    } else {
-      time--;
-      timerElement.textContent = time;
+        showResults(questionsCount);
+      };
     }
-  }, 1000);
+  };
+  myRequest.open("GET", "questions.JSON", true);
+  myRequest.send();
 }
+getQuestions();
 
-function submitAnswer() {
-  const userAnswerField = document.getElementById("user-answer");
-  const userAnswer = userAnswerField ? userAnswerField.value.trim() : "";
-
-  // تحقق إذا كانت الإجابة غير فارغة
-  if (!userAnswer) {
-    userAnswers[currentQuestionIndex] = "لم يتم الإجابة"; // حفظ حالة عدم الإجابة
-    return; // إنهاء الدالة دون عرض التهنئة
-  }
-
-  userAnswers[currentQuestionIndex] = userAnswer; // حفظ الإجابة
-
-  // مقارنة الإجابات
-  const normalizedUserAnswer = normalizeAnswer(userAnswer);
-  const normalizedCorrectAnswer = normalizeAnswer(
-    questions[currentQuestionIndex].answer
-  );
-
-  // تحقق من صحة الإجابة
-  if (normalizedUserAnswer === normalizedCorrectAnswer) {
-    // عرض التهنئة فقط عند الإجابة الصحيحة
-
-    showCongratulations();
+function CreateBullets(num) {
+  countSpan.innerHTML = num;
+  // create spans
+  for (let i = 0; i < num; i++) {
+    // Create Bullet
+    let theBullet = document.createElement("span");
+    // Check if its first span
+    if (i === 0) {
+      theBullet.className = "on";
+    }
+    // append bullets to main bullet container
+    bulletsSpansContainer.appendChild(theBullet);
   }
 }
 
-// دالة لحفظ الإجابة
-function saveAnswer() {
-  const userAnswerField = document.getElementById("user-answer");
-  const userAnswer = userAnswerField ? userAnswerField.value.trim() : "";
+function addQuestionData(obj, count) {
+  if (currentIndex < count) {
+    // إنشاء عنوان السؤال
+    let questionTitle = document.createElement("h2");
+    let questionText = document.createTextNode(obj.question);
+    questionTitle.appendChild(questionText);
+    quizArea.appendChild(questionTitle);
 
-  if (userAnswer) {
-    userAnswers[currentQuestionIndex] = userAnswer; // حفظ الإجابة
+    // إنشاء الإجابات بناءً على عدد الخيارات
+    obj.options.forEach((option, index) => {
+      // إنشاء العنصر الأساسي للإجابة
+      let mainDiv = document.createElement("div");
+      mainDiv.className = "answer";
+
+      // إنشاء زر الراديو
+      let radioInput = document.createElement("input");
+      radioInput.setAttribute("type", "radio");
+      radioInput.setAttribute("name", "questions");
+      radioInput.id = `answer_${index + 1}`;
+      radioInput.dataset.answer = option;
+
+      // تحديد الخيار الأول بشكل افتراضي
+      if (index === 0) {
+        radioInput.checked = true;
+      }
+
+      // إنشاء التسمية (label)
+      let theLabel = document.createElement("label");
+      theLabel.htmlFor = `answer_${index + 1}`;
+      let theLabelText = document.createTextNode(option);
+      theLabel.appendChild(theLabelText);
+
+      // إلحاق الراديو والتسمية بالعناصر
+      mainDiv.appendChild(radioInput);
+      mainDiv.appendChild(theLabel);
+      answersArea.appendChild(mainDiv);
+    });
   }
 }
 
-// تعديل دالة goToNextQuestion للانتقال للسؤال التالي مباشرة
-function goToNextQuestion() {
-  const nextBtn = document.getElementById("next-btn");
+function checkAnswer(ranswer, count) {
+  let answer = document.getElementsByName("questions");
+  let theChoosenAnswer;
+  for (let i = 0; i < answer.length; i++) {
+    if (answer[i].checked) {
+      theChoosenAnswer = answer[i].dataset.answer;
+    }
+  }
 
-  saveAnswer(); // حفظ الإجابة عند الانتقال
+  if (theChoosenAnswer === undefined) {
+    console.warn("لم يتم اختيار إجابة صحيحة.");
+    return;
+  }
 
-  currentQuestionIndex++;
+  userAnswers.push({
+    questionIndex: currentIndex - 1,
+    chosen: theChoosenAnswer,
+  });
 
-  if (currentQuestionIndex < questions.length) {
-    loadQuestion(); // تحميل السؤال التالي
-  } else {
-    questionScreen.classList.add("hidden");
-    resultScreen.classList.remove("hidden");
-    showResults(); // عرض النتيجة النهائية
+  if (ranswer === theChoosenAnswer) {
+    rightAnswers++;
   }
 }
 
-// تمكين الانتقال للسؤال التالي عند الضغط على زر "التالي"
-nextBtn.addEventListener("click", () => {
-  if (!nextBtn.disabled) {
-    goToNextQuestion();
-  }
-});
+function handelBullets() {
+  let handelSpan = document.querySelectorAll(".bullets .spans span");
+  let arrayOfSpans = Array.from(handelSpan);
+  arrayOfSpans.forEach((span, index) => {
+    if (currentIndex === index) {
+      span.classList.add("on");
+    }
+  });
+}
 
-function showResults() {
-  resultContainer.innerHTML = questions
-    .map((question, index) => {
-      const userAnswerNormalized = normalizeAnswer(userAnswers[index] || "");
-      const correctAnswerNormalized = normalizeAnswer(question.answer);
+function showResults(count) {
+  let theResult;
+  if (currentIndex === count) {
+    quizArea.remove();
+    answersArea.remove();
+    submitButton.remove();
+    bulletsElement.remove();
 
-      const isCorrect = userAnswerNormalized === correctAnswerNormalized;
+    if (rightAnswers > count / 2 && rightAnswers < count) {
+      theResult = `<span class="good">Good</span>, ${rightAnswers} From ${count}`;
+    } else if (rightAnswers === count) {
+      theResult = `<span class="perfect">Perfect</span>, All Answers Are Perfect`;
+    } else {
+      theResult = `<span class="bad">Don't be sad. Try to look and read more.</span>, ${rightAnswers} From ${count}`;
+    }
 
-      return `
-        <div class="result-item">
-          <p class="question-text">${index + 1}. ${question.question}</p>
-          <div class="answers">
-            <p class="user-answer ${
-              isCorrect ? "correct-answer" : "incorrect-answer"
-            }">
-              إجابتك: <span class="${isCorrect ? "correct" : "incorrect"}">${
-        userAnswers[index] || "لم يتم الإجابة"
-      }</span>
-            </p>
-            ${
-              isCorrect
-                ? `
-              <p class="correct-answer-text">
-                الإجابة الصحيحة: <span class="correct">${question.answer}</span>
-              </p>
-            `
-                : `
-              <p class="correct-answer-text">
-                الإجابة الصحيحة: <span class="blue">${question.answer}</span>
-              </p>
-            `
-            }
-          </div>
+    let resultSummary = document.createElement("div");
+    resultSummary.className = "result-summary";
+    resultSummary.innerHTML = theResult;
+    results.appendChild(resultSummary);
+
+    let allQuestionsHTML = `<h2>Questions, Your Answers, and Correct Solutions</h2>`;
+    questionsObject.questions.forEach((question, index) => {
+      const userAnswer = userAnswers.find((ans) => ans.questionIndex === index);
+      const chosenAnswer = userAnswer ? userAnswer.chosen : "No Answer";
+      const isCorrect = question.answer === chosenAnswer ? "✅" : "❌";
+
+      allQuestionsHTML += `
+        <div class="question-block">
+          <h3>Q${index + 1}: ${question.question}</h3>
+          <p><strong>Correct Answer:</strong> ${question.answer}</p>
+          <p><strong>Your Answer:</strong> ${chosenAnswer} ${isCorrect}</p>
         </div>
       `;
-    })
-    .join("");
+    });
 
-  resultContainer.innerHTML += `<p class="score">إجاباتك الصحيحة: ${
-    userAnswers.filter((answer, index) => {
-      const userAnswerNormalized = normalizeAnswer(answer || "");
-      const correctAnswerNormalized = normalizeAnswer(questions[index].answer);
-      return userAnswerNormalized === correctAnswerNormalized;
-    }).length
-  } من ${questions.length}</p>`;
+    let solutionsDiv = document.createElement("div");
+    solutionsDiv.className = "solutions";
+    solutionsDiv.innerHTML = allQuestionsHTML;
+    results.appendChild(solutionsDiv);
 
-  // تحقق إذا كانت جميع الإجابات صحيحة
-  const allAnswersCorrect = userAnswers.every((answer, index) => {
-    const userAnswerNormalized = normalizeAnswer(answer || "");
-    const correctAnswerNormalized = normalizeAnswer(questions[index].answer);
-    return userAnswerNormalized === correctAnswerNormalized;
-  });
+  }
 }
 
-retryBtn.addEventListener("click", () => {
-  currentQuestionIndex = 0;
-  userAnswers = [];
-  score = 0;
-  resultScreen.classList.add("hidden");
-  startScreen.classList.remove("hidden");
-});
+function countDown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds;
+    countDownIntervral = setInterval(function () {
+      minutes = parseInt(duration / 60);
+      seconds = parseInt(duration % 60);
+
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+      countDownElement.innerHTML = `${minutes}:${seconds}`;
+      if (--duration < 0) {
+        clearInterval(countDownIntervral);
+        submitButton.click();
+      }
+    }, 1000);
+  }
+}
+
+// تحديد الوقت حسب مستوى الصعوبة
+function getDurationForDifficulty(difficulty) {
+  switch (difficulty) {
+    case "easy":
+      return 30; // 30 ثانية للمستوى السهل
+    case "medium":
+      return 60; // 60 ثانية للمستوى المتوسط
+    case "hard":
+      return 90; // 90 ثانية للمستوى الصعب
+    case "Very hard":
+      return 120; // 120  ثانية للمستوى الصعب جد
+    default:
+      return 30; // الافتراضي 30 ثانية
+  }
+}
