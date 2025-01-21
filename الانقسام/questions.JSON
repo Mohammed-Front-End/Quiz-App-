@@ -1,0 +1,65 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "omar: (1) .........................?",
+      "options": [
+        "i'd like to book a ticket to alex",
+        "which platform does the train leave from",
+        "when does the train leave",
+        "the train arrives at 8 o'clock"
+      ],
+      "answer": "i'd like to book a ticket to alex",
+      "difficulty": "medium"
+    },
+    {
+      "id": 2,
+      "question": "omar: (2) .........................?",
+      "options": [
+        "i'd like to book a ticket to alex",
+        "which platform does the train leave from",
+        "when does the train leave",
+        "thank you"
+      ],
+      "answer": "which platform does the train leave from",
+      "difficulty": "medium"
+    },
+    {
+      "id": 3,
+      "question": "omar: (3) .........................?",
+      "options": [
+        "i'd like to book a ticket to alex",
+        "which platform does the train leave from",
+        "when does the train leave",
+        "the train arrives at 8 o'clock"
+      ],
+      "answer": "when does the train leave",
+      "difficulty": "medium"
+    },
+    {
+      "id": 4,
+      "question": "assistant: (4).........................?",
+      "options": [
+        "the train arrives at 8 o'clock",
+        "thank you",
+        "the ticket to alx costs 100 pounds",
+        "the train leaves from platform 5"
+      ],
+      "answer": "the train arrives at 8 o'clock",
+      "difficulty": "medium"
+    },
+    {
+      "id": 5,
+      "question": "omar: (5) .........................?",
+      "options": [
+        "i'd like to book a ticket to alex",
+        "thank you",
+        "when does the train leave",
+        "the train leaves at 6 o'clock"
+      ],
+      "answer": "thank you",
+      "difficulty": "medium"
+    }
+    
+  ]
+}
