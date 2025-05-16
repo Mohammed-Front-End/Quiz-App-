@@ -201,7 +201,7 @@ function showResults(count) {
     nextExamButton.textContent = "انتقل إلى امتحان التوصيل";
     nextExamButton.onclick = function () {
       // هنا تضع رابط الامتحان التالي
-      window.location.href = "./الانقسام/index.html"; // استبدل بالمسار الصحيح
+      // window.location.href = "./الانقسام/index.html"; // استبدل بالمسار الصحيح
     };
     results.appendChild(nextExamButton);
   }
